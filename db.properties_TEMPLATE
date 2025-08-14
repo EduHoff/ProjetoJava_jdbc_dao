@@ -1,0 +1,7 @@
+user=root
+password=
+dburl=jdbc:mysql://localhost:3306/mysql_jdbc
+useSSL=false
+
+
+https://github.com/acenelio/demo-dao-jdbc/blob/master/database.sql
