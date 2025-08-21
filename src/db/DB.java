@@ -60,6 +60,16 @@ public class DB {
 		}
 	}
 	
+	public static void closeResultSet(ResultSet rs) {
+		if(rs != null) {
+			try {
+				rs.close();
+			}catch(SQLException e) {
+				throw new DbException(e.getMessage()); 
+			}	
+		}
+	}
+	
 	
 
 }
