@@ -16,7 +16,6 @@ public class Seller implements Serializable {
 	
 	private Department department;
 	
-	//static private SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public Seller() {
 		

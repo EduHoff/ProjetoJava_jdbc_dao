@@ -20,8 +20,21 @@ Scanner sc = new Scanner(System.in);
 		//código fonte original: https://github.com/acenelio/demo-dao-jdbc/tree/master
 		//ainda é possível criar todo um código para o Department especificamente (não apenas o Seller). Talvez em algum momento (se eu lembrar) eu faço por conta própria.
 		
+
+
+	
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*	
 		System.out.println("=== TEST 1: seller findById =====");
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
@@ -55,6 +68,7 @@ Scanner sc = new Scanner(System.in);
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
 		System.out.println("Delete completed");
+	*/
 		
 		DB.closeConnection();
 	}
