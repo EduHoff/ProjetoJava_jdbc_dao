@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import db.DB;
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -23,10 +24,13 @@ Scanner sc = new Scanner(System.in);
 
 
 	
-		SellerDao sellerDao = DaoFactory.createSellerDao();
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
 		
-		
+		System.out.println("\n=== TEST 4: department insert =====");
+		Department newDepartment = new Department(null, "TI");
+		departmentDao.insert(newDepartment);
+		System.out.println("Inserted! New id = " + newDepartment.getId());
 		
 		
 		
