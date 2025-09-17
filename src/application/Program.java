@@ -16,29 +16,47 @@ public class Program {
 	public static void main(String[] args) {
 		
 		
-Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 
 		//código fonte original: https://github.com/acenelio/demo-dao-jdbc/tree/master
-		//ainda é possível criar todo um código para o Department especificamente (não apenas o Seller). Talvez em algum momento (se eu lembrar) eu faço por conta própria.
 		
-
-
 	
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
 		
-		System.out.println("\n=== TEST 4: department insert =====");
+		System.out.println("=== TEST 1: department findById =====");
+		Department department = departmentDao.findById(5);
+		System.out.println(department);
+		
+		System.out.println("\n=== TEST 2: department findAll =====");
+		List<Department> list = departmentDao.findAll();
+		for (Department obj : list) {
+			System.out.println(obj);
+		}
+		
+		System.out.println("\n=== TEST 3: department insert =====");
 		Department newDepartment = new Department(null, "TI");
 		departmentDao.insert(newDepartment);
 		System.out.println("Inserted! New id = " + newDepartment.getId());
 		
+		System.out.println("\n=== TEST 4: department update =====");
+		department = departmentDao.findById(5);
+		department.setName("Tecnologia Avançada");
+		departmentDao.update(department);
+		System.out.println("Update completed");
+		
+		System.out.println("\n=== TEST 5: department delete =====");
+		System.out.println("Enter id for delete test: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Delete completed");
 		
 		
+		/*
+		 
+		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
 		
-		
-		
-		/*	
 		System.out.println("=== TEST 1: seller findById =====");
 		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
@@ -73,7 +91,7 @@ Scanner sc = new Scanner(System.in);
 		sellerDao.deleteById(id);
 		System.out.println("Delete completed");
 	*/
-		
+		sc.close();
 		DB.closeConnection();
 	}
 
